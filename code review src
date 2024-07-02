@@ -1,0 +1,34 @@
+/**	An	individual	account.	Also	see	CorporateAccount.	*/
+public	class	Account	{
+						private	double	principal;
+					/**	The	yearly,	compounded	rate	(at	365.25	days	per	year).	*/
+				private	double	rate;
+				/**	Days	since	last	interest	payout.	*/
+				private	int	daysActive;
+				private	Type	type;
+				/**	The	varieties	of	account	our	bank	offers.	*/
+				public	enum	Type{STANDARD,	BUDGET,	PREMIUM,					PREMIUM_PLUS}
+				/**	Compute	interest.	**/
+public	double	interest()	{
+					double	years	=	daysActive	/	365.25;
+				double	compoundInterest	=	principal	*	Math.pow(rate,	years);
+				return	compoundInterest	– principal;
+}
+/**	Return	true	if	this	is	a	premium	account.	**/
+public	boolean	isPremium()	{
+								return	accountType	==	Type.PREMIUM	||
+								accountType	==	Type.PREMIUM_PLUS;
+}
+/**	The	portion	of	the	interest	that	goes	to	the	broker.	**/
+public	static	final	double	BROKER_FEE_PERCENT	=	0.0125;
+/**	Return	the	sum	of	the	broker	fees	for	all	the	given	accounts.	**/
+public	static	double	calculateFee(Account	accounts[])	{
+					double	totalFee	=	0.0;
+								for	(Account	account	:	accounts)	{
+													If	(account.isPremium())	{
+																		totalFee	+=	BROKER_FEE_PERCENT	*	account.interest();
+						}
+		}
+return	totalFee;
+}
+}
