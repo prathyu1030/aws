@@ -1,0 +1,21 @@
+<project>
+  <modelVersion/>
+
+  <parent/>
+
+  <groupId/>
+  <artifactId/>
+  <version/>
+  <packaging/>
+
+  <properties/>
+
+  <dependencyManagement/>
+  <dependencies/>
+
+  <build/>
+
+  <reporting/>
+
+  <profiles/>
+</project>
