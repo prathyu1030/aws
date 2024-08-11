@@ -1,0 +1,30 @@
+pipeline{
+    agent any
+        stages
+	      stage('git checkout'){
+		    steps{
+			   git'https://github.com/prathyu1030/git30sep.git'
+			}   
+		}	
+	    stage('compile'){
+		    steps{
+			   sh 'mvn compile'
+			}
+		}
+		stage('code review'){
+		    steps{
+			   sh'mvn pmd:pmd'
+			}
+		}
+        stage('Unit test'){
+		    steps{
+			   sh'mvn test'
+			}
+		}
+		stage('package'){
+		    steps{
+			   sh'mvn package'
+			}
+	    }
+	}
+}	
