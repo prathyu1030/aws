@@ -3,7 +3,7 @@ pipeline{
        stages{
 	      stage('git checkout'){
 		    steps{
-		         git branch: 'main', credentialsId: 'GithubCred',' https://github.com/prathyu1030/aws.git'
+		        git' https://github.com/prathyu1030/aws.git'
 		        }   
 		}	
 	    stage('compile'){
@@ -26,6 +26,6 @@ pipeline{
 			   sh'mvn package'
 			}
 	    }
-  }
+    }
 }
 	
