@@ -3,7 +3,7 @@ pipeline{
        stages{
 	      stage('git checkout'){
 		    steps{
-		           git' https://github.com/prathyu1030/aws.git'
+		         git branch: 'main', credentialsId: 'GithubCred',' https://github.com/prathyu1030/aws.git'
 		        }   
 		}	
 	    stage('compile'){
