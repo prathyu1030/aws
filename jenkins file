@@ -3,7 +3,7 @@ pipeline{
         stages{
 	      stage('git checkout'){
 		    steps{
-			   git'https://github.com/prathyu1030/git30sep.git'
+			   https://github.com/prathyu1030/aws.git
 			}   
 		}	
 	    stage('compile'){
