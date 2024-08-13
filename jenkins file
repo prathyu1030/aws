@@ -1,10 +1,10 @@
 pipeline{
     agent any
-        stages{
+       stages{
 	      stage('git checkout'){
 		    steps{
-			   https://github.com/prathyu1030/aws.git
-			}   
+		           git' https://github.com/prathyu1030/aws.git'
+		        }   
 		}	
 	    stage('compile'){
 		    steps{
